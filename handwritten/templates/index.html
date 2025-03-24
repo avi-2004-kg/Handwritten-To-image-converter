@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text-to-Image Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Text-to-Image Generator</h1>
+        <form action="/generate" method="post">
+            <input type="text" name="prompt" placeholder="Enter a description..." required>
+            <button type="submit">Generate</button>
+        </form>
+        
+        {% if image_path %}
+            <h2>Generated Image:</h2>
+            <img src="{{ image_path }}" alt="Generated Image">
+        {% endif %}
+    </div>
+</body>
+</html>
